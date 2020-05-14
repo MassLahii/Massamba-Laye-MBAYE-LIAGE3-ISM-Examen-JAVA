@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="502.0" prefWidth="666.0" style="-fx-background-color: #1C2D3E;" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.AjoutProfEtAffecterClasseController">
+   <children>
+      <Pane prefHeight="42.0" prefWidth="666.0" style="-fx-background-color: #FCB215;">
+         <children>
+            <Text fill="WHITE" layoutX="93.0" layoutY="30.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ajouter Professeur et Affecter Classe" wrappingWidth="505.57861328125">
+               <font>
+                  <Font name="System Bold" size="25.0" />
+               </font>
+            </Text>
+         </children>
+      </Pane>
+      <Pane layoutX="10.0" layoutY="53.0" prefHeight="232.0" prefWidth="361.0">
+         <children>
+            <Label layoutX="5.0" layoutY="57.0" text="Numéro" textFill="WHITE">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Text fill="WHITE" layoutX="18.0" layoutY="36.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Professeur">
+               <font>
+                  <Font size="26.0" />
+               </font>
+            </Text>
+            <TextField fx:id="txtNumeroProfesseur" layoutX="160.0" layoutY="58.0" prefHeight="25.0" prefWidth="139.0" />
+            <Label layoutX="7.0" layoutY="88.0" text="Nom" textFill="WHITE">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <TextField fx:id="txtNomProfesseur" layoutX="160.0" layoutY="92.0" prefHeight="25.0" prefWidth="139.0" />
+            <Label layoutX="9.0" layoutY="122.0" text="Prenom" textFill="WHITE">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <TextField fx:id="txtPrenomProfesseur" layoutX="161.0" layoutY="126.0" prefHeight="25.0" prefWidth="139.0" />
+            <Label layoutX="13.0" layoutY="194.0" text="Grade" textFill="WHITE">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <TextField fx:id="txtGradeProfesseur" layoutX="162.0" layoutY="193.0" prefHeight="25.0" prefWidth="139.0" />
+            <Label layoutX="11.0" layoutY="160.0" prefHeight="27.0" prefWidth="150.0" text="Date de Naissance" textFill="WHITE">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <DatePicker fx:id="txtDateNaissanceProfesseur" layoutX="161.0" layoutY="159.0" prefHeight="25.0" prefWidth="139.0" />
+         </children>
+      </Pane>
+      <Pane layoutX="356.0" layoutY="53.0" prefHeight="157.0" prefWidth="307.0">
+         <children>
+            <ComboBox fx:id="cboClasse" layoutX="136.0" layoutY="97.0" prefHeight="25.0" prefWidth="129.0" />
+            <Label layoutX="51.0" layoutY="95.0" text="Classe" textFill="WHITE">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Label layoutX="53.0" layoutY="51.0" prefHeight="33.0" prefWidth="113.0" text="Année " textFill="WHITE">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <ComboBox fx:id="cboAnneeScolaire" layoutX="135.0" layoutY="54.0" prefHeight="25.0" prefWidth="129.0" />
+            <Button fx:id="btnSearchProfesseur" layoutX="-44.0" layoutY="58.0" mnemonicParsing="false" onAction="#handleSearchProfesseurByNum" prefHeight="25.0" prefWidth="33.0" text="OK" />
+         </children>
+      </Pane>
+      <Button fx:id="btnAddClasseOnTableView" layoutX="625.0" layoutY="150.0" mnemonicParsing="false" onAction="#handleAddClasseOnTableView" prefHeight="25.0" prefWidth="33.0" text="OK" />
+      <TableView fx:id="tblViewClasseEnseigner" layoutX="369.0" layoutY="233.0" prefHeight="187.0" prefWidth="282.0">
+        <columns>
+          <TableColumn fx:id="tblcLibelleClasse" prefWidth="297.0" text="Libelle" />
+        </columns>
+      </TableView>
+      <Text fill="WHITE" layoutX="418.0" layoutY="225.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Classes Enseignées" wrappingWidth="195.62890625">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Text>
+      <Button fx:id="btnEnregistrerProf" layoutX="576.0" layoutY="429.0" mnemonicParsing="false" onAction="#handleAddProfAndAffectClasse" text="Enregistrer" />
+   </children>
+</AnchorPane>
